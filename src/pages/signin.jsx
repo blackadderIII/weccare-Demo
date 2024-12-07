@@ -84,6 +84,10 @@ export default function SignIn() {
         localStorage.setItem("admin", JSON.stringify(admin));
         navigate("/");
         return;
+      } else {
+        errorToast("Invalid credentials");
+        setIsLoading(false);
+        return;
       }
     } catch (error) {
       setIsLoading(false);

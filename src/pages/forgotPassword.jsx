@@ -10,7 +10,7 @@ import { LoadingBtnComponent } from '../components/loading'
 // utils
 import { color } from '../utils/color'
 import Toast, { errorToast, warnToast } from '../components/toastComponent'
-import { api } from '../utils/api'
+// import { api } from '../utils/api'
 
 export default function ForgotPassword() {
 
@@ -59,58 +59,58 @@ export default function ForgotPassword() {
         })
     }
 
-    const sendEmail = async () => {
+    // const sendEmail = async () => {
 
-        if (!email) {
-            warnToast("Enter your email")
-            return
-        }
+    //     if (!email) {
+    //         warnToast("Enter your email")
+    //         return
+    //     }
 
-        setIsLoading(true)
-        setIsDisabled(true)
+    //     setIsLoading(true)
+    //     setIsDisabled(true)
 
-        try {
-            const sendMailRequest = await fetch(`${api}/sendResetCode`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email,
-                })
-            })
+    //     try {
+    //         const sendMailRequest = await fetch(`${api}/sendResetCode`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 email: email,
+    //             })
+    //         })
 
-            const res = await sendMailRequest.json()
-            const response = res.message
+    //         const res = await sendMailRequest.json()
+    //         const response = res.message
 
-            if (response === 'error executing query' || response === 'Error sending Mail') {
-                setIsLoading(false)
-                setIsDisabled(false)
-                errorToast("An error occured. Please try again later.")
-                return
-            }
+    //         if (response === 'error executing query' || response === 'Error sending Mail') {
+    //             setIsLoading(false)
+    //             setIsDisabled(false)
+    //             errorToast("An error occured. Please try again later.")
+    //             return
+    //         }
 
-            if (response === "user doesn't exist") {
-                setIsLoading(false)
-                setIsDisabled(false)
-                errorToast("Invalid Email")
-                return
-            }
+    //         if (response === "user doesn't exist") {
+    //             setIsLoading(false)
+    //             setIsDisabled(false)
+    //             errorToast("Invalid Email")
+    //             return
+    //         }
 
-            setIsLoading(false)
-            setIsDisabled(false)
-            localStorage.setItem('tempEmail', email)
-            navigate('/verifyCode')
-            return
-        }
-        catch (error) {
-            setIsLoading(false)
-            setIsDisabled(false)
-            console.log('error sending password', error)
-            errorToast('An error occured. Please try again later.')
-            return
-        }
-    }
+    //         setIsLoading(false)
+    //         setIsDisabled(false)
+    //         localStorage.setItem('tempEmail', email)
+    //         navigate('/verifyCode')
+    //         return
+    //     }
+    //     catch (error) {
+    //         setIsLoading(false)
+    //         setIsDisabled(false)
+    //         console.log('error sending password', error)
+    //         errorToast('An error occured. Please try again later.')
+    //         return
+    //     }
+    // }
 
     return (
         <main className='signin-container'>

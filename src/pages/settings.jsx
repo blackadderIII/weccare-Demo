@@ -10,7 +10,7 @@ import { successToast, errorToast, warnToast } from '../components/toastComponen
 // utils
 import { ThemeContext } from '../utils/themeContext'
 import { UserContext } from '../utils/userContext'
-import { api } from '../utils/api'
+// import { api } from '../utils/api'
 
 // images
 import lightMode from '../assets/shots/light.png'
@@ -89,195 +89,195 @@ export default function Settings() {
 
     const [isProfileSaving, setIsProfileSaving] = useState(false)
 
-    const saveProfile = async () => {
-        if (!firstname || !lastname || !location) {
-            warnToast("Fields can't be empty. Please try again later.")
-            return
-        }
+    // const saveProfile = async () => {
+    //     if (!firstname || !lastname || !location) {
+    //         warnToast("Fields can't be empty. Please try again later.")
+    //         return
+    //     }
 
-        if (firstname === user.firstname && lastname === user.lastname && location === user.location) {
-            warnToast("No change was made")
-            return
-        }
+    //     if (firstname === user.firstname && lastname === user.lastname && location === user.location) {
+    //         warnToast("No change was made")
+    //         return
+    //     }
 
-        setIsLoading(true)
+    //     setIsLoading(true)
 
-        try {
-            const save = await fetch(`${api}/saveProfile`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: user.email,
-                    firstname: firstname,
-                    lastname: lastname,
-                    location: location,
-                })
-            })
+    //     try {
+    //         const save = await fetch(`${api}/saveProfile`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 email: user.email,
+    //                 firstname: firstname,
+    //                 lastname: lastname,
+    //                 location: location,
+    //             })
+    //         })
 
-            const response = await save.json()
+    //         const response = await save.json()
 
-            if (response.message === 'error executing query' || response.message === 'failed') {
-                setIsLoading(false)
-                errorToast("An error occured. Please try again later")
-                return
-            }
+    //         if (response.message === 'error executing query' || response.message === 'failed') {
+    //             setIsLoading(false)
+    //             errorToast("An error occured. Please try again later")
+    //             return
+    //         }
 
-            setIsLoading(false)
-            localStorage.setItem("admin", JSON.stringify(response.info[0]))
-            setUser(response.info[0])
-            successToast("Profile saved successfully")
-            return
+    //         setIsLoading(false)
+    //         localStorage.setItem("admin", JSON.stringify(response.info[0]))
+    //         setUser(response.info[0])
+    //         successToast("Profile saved successfully")
+    //         return
 
-        }
-        catch (error) {
-            setIsLoading(false)
-            console.log('error saving profile', error)
-            errorToast("An error occured. Please try again later")
-            return
-        }
-    }
+    //     }
+    //     catch (error) {
+    //         setIsLoading(false)
+    //         console.log('error saving profile', error)
+    //         errorToast("An error occured. Please try again later")
+    //         return
+    //     }
+    // }
 
-    const saveProfilePicture = async (picture) => {
+    // const saveProfilePicture = async (picture) => {
 
-        if (!picture) {
-            console.log('empty')
-            return
-        }
+    //     if (!picture) {
+    //         console.log('empty')
+    //         return
+    //     }
 
-        setIsProfileSaving(true)
+    //     setIsProfileSaving(true)
 
-        const formData = new FormData()
-        formData.append('image', picture)
+    //     const formData = new FormData()
+    //     formData.append('image', picture)
 
-        try {
-            const save = await fetch(`${api}/uploadProfile`, {
-                method: 'POST',
-                body: formData
-            })
+    //     try {
+    //         const save = await fetch(`${api}/uploadProfile`, {
+    //             method: 'POST',
+    //             body: formData
+    //         })
 
-            if (save.ok) {
-                try {
-                    const saveFileName = await fetch(`${api}/saveFileName/${user.email}`)
-                    const response = await saveFileName.json()
+    //         if (save.ok) {
+    //             try {
+    //                 const saveFileName = await fetch(`${api}/saveFileName/${user.email}`)
+    //                 const response = await saveFileName.json()
 
-                    if (response.message === 'error executing query') {
-                        setIsProfileSaving(false)
-                        errorToast("An error occured while saving profile picture. Please try again later")
-                        return
-                    }
-                    if (response.message === 'failed') {
-                        setIsProfileSaving(false)
-                        errorToast("Can't change profile picture now. Please try again later")
-                        return
-                    }
+    //                 if (response.message === 'error executing query') {
+    //                     setIsProfileSaving(false)
+    //                     errorToast("An error occured while saving profile picture. Please try again later")
+    //                     return
+    //                 }
+    //                 if (response.message === 'failed') {
+    //                     setIsProfileSaving(false)
+    //                     errorToast("Can't change profile picture now. Please try again later")
+    //                     return
+    //                 }
 
-                    setIsProfileSaving(false)
-                    localStorage.setItem("admin", JSON.stringify(response.info[0]))
-                    setUser(response.info[0])
-                    successToast("Profile Picture changed successfully.")
-                    return
+    //                 setIsProfileSaving(false)
+    //                 localStorage.setItem("admin", JSON.stringify(response.info[0]))
+    //                 setUser(response.info[0])
+    //                 successToast("Profile Picture changed successfully.")
+    //                 return
 
-                }
-                catch (error) {
-                    setIsProfileSaving(false)
-                    console.log('error saving filename to database', error)
-                    errorToast("An error occured while saving profile picture. Please try again later")
-                    return
-                }
-            }
-        }
-        catch (error) {
-            setIsProfileSaving(false)
-            console.log('error saving profile picture', error)
-            errorToast("An error occured while saving profile picture. Please try again later")
-            return
-        }
-    }
+    //             }
+    //             catch (error) {
+    //                 setIsProfileSaving(false)
+    //                 console.log('error saving filename to database', error)
+    //                 errorToast("An error occured while saving profile picture. Please try again later")
+    //                 return
+    //             }
+    //         }
+    //     }
+    //     catch (error) {
+    //         setIsProfileSaving(false)
+    //         console.log('error saving profile picture', error)
+    //         errorToast("An error occured while saving profile picture. Please try again later")
+    //         return
+    //     }
+    // }
 
-    const handleProfilePicture = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            const selectedPicture = e.target.files[0]
+    // const handleProfilePicture = (e) => {
+    //     if (e.target.files && e.target.files[0]) {
+    //         const selectedPicture = e.target.files[0]
 
-            const reader = new FileReader()
+    //         const reader = new FileReader()
 
-            reader.onload = function (e) {
-                setProfilepicture(e.target.result)
-            }
+    //         reader.onload = function (e) {
+    //             setProfilepicture(e.target.result)
+    //         }
 
-            reader.readAsDataURL(selectedPicture)
-            saveProfilePicture(selectedPicture)
-        } else {
-            warnToast("No picture selected")
-            return
-        }
-    }
+    //         reader.readAsDataURL(selectedPicture)
+    //         saveProfilePicture(selectedPicture)
+    //     } else {
+    //         warnToast("No picture selected")
+    //         return
+    //     }
+    // }
 
-    // --------------------------------------------------------------------------------------------------------------
+    // // --------------------------------------------------------------------------------------------------------------
 
-    function passwordCheck(str) {
-        // Regular expression to match uppercase letter, number, and special character
-        const regex = /(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]/;
-        return regex.test(str);
-    }
+    // function passwordCheck(str) {
+    //     // Regular expression to match uppercase letter, number, and special character
+    //     const regex = /(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]/;
+    //     return regex.test(str);
+    // }
 
 
-    const changePassword = async () => {
-        if (!currentPassword || !newPassword || !confirmPassword) {
-            warnToast("Fields can't be empty. Please check and try again")
-            return
-        }
+    // const changePassword = async () => {
+    //     if (!currentPassword || !newPassword || !confirmPassword) {
+    //         warnToast("Fields can't be empty. Please check and try again")
+    //         return
+    //     }
 
-        if (newPassword !== confirmPassword) {
-            warnToast("Passwords don't match")
-            return
-        }
+    //     if (newPassword !== confirmPassword) {
+    //         warnToast("Passwords don't match")
+    //         return
+    //     }
 
-        if (!passwordCheck(newPassword) || newPassword.length < 8) {
-            warnToast("Password requirements not met. Please check and try again later")
-            return
-        }
+    //     if (!passwordCheck(newPassword) || newPassword.length < 8) {
+    //         warnToast("Password requirements not met. Please check and try again later")
+    //         return
+    //     }
 
-        setIsChanging(true)
+    //     setIsChanging(true)
 
-        try {
-            const changePass = await fetch(`${api}/changePassword`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: user.email,
-                    currentPassword: currentPassword,
-                    password: newPassword,
-                })
-            })
-            const response = await changePass.json()
+    //     try {
+    //         const changePass = await fetch(`${api}/changePassword`, {
+    //             method: "POST",
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 email: user.email,
+    //                 currentPassword: currentPassword,
+    //                 password: newPassword,
+    //             })
+    //         })
+    //         const response = await changePass.json()
 
-            if (response.message === 'error executing query' || response.message === 'failed') {
-                setIsChanging(false)
-                errorToast("An error occured. Please try again later")
-                return
-            }
+    //         if (response.message === 'error executing query' || response.message === 'failed') {
+    //             setIsChanging(false)
+    //             errorToast("An error occured. Please try again later")
+    //             return
+    //         }
 
-            if (response.message === 'incorrect password') {
-                setIsChanging(false)
-                errorToast("Password incorrect")
-                return
-            }
+    //         if (response.message === 'incorrect password') {
+    //             setIsChanging(false)
+    //             errorToast("Password incorrect")
+    //             return
+    //         }
 
-            setIsChanging(false)
-            successToast("Password changed successfully")
-            return
-        }
-        catch (error) {
-            console.log('error changing password', error)
-            errorToast("An error occured. Please try again later")
-            return
-        }
+    //         setIsChanging(false)
+    //         successToast("Password changed successfully")
+    //         return
+    //     }
+    //     catch (error) {
+    //         console.log('error changing password', error)
+    //         errorToast("An error occured. Please try again later")
+    //         return
+    //     }
 
-    }
+    // }
 
     // --------------------------------------------------------------------------------------------------------------
 

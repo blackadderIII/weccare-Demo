@@ -1,14 +1,13 @@
-import React, { useEffect, useState, useContext } from 'react'
-import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
+import React, { useContext, useEffect, useState } from 'react';
+import SimpleMDE from "react-simplemde-editor";
 
-import "../css/writeCard.css"
+import "../css/writeCard.css";
 
-import { errorToast, successToast, warnToast } from '../components/toastComponent';
-import { TitleComponentH1 } from '../components/titleComponent'
 import { LoadingBtnComponent } from '../components/loading';
+import { TitleComponentH1 } from '../components/titleComponent';
+import { errorToast, successToast, warnToast } from '../components/toastComponent';
 
-import { api } from '../utils/api'
 import { UserContext } from '../utils/userContext';
 
 import { carecards } from '../lib/fakeCareCards';

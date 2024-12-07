@@ -1,15 +1,14 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "../css/cardDetail.css";
 
-import Empty, { ErrorIcon } from "../components/empty";
+import { ErrorIcon } from "../components/empty";
+import { carecards } from "../lib/fakeCareCards";
+import { ThemeContext } from "../utils/themeContext";
+import { UserContext } from "../utils/userContext";
 import { SaveButtonComponent } from "./buttonComponent";
 import { Loading } from "./loading";
 import { errorToast, successToast } from "./toastComponent";
-import { api } from "../utils/api";
-import { ThemeContext } from "../utils/themeContext";
-import { UserContext } from "../utils/userContext";
-import { carecards } from "../lib/fakeCareCards";
 
 export default function CardDetail({
   isLoading,

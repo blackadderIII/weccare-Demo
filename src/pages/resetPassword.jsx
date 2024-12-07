@@ -10,7 +10,7 @@ import { LoadingBtnComponent } from '../components/loading'
 // utils
 import { color } from '../utils/color'
 import Toast, { errorToast, successToast, warnToast } from '../components/toastComponent'
-import { api } from '../utils/api'
+// import { api } from '../utils/api'
 
 export default function ResetPassword() {
 
@@ -68,64 +68,64 @@ export default function ResetPassword() {
         setEmail(getEmail)
     }, [])
 
-    const resetPassword = async () => {
+    // const resetPassword = async () => {
 
-        if (!newPassword || !confirmPassword) {
-            warnToast("Fields can't be empty. Please check and try again")
-            return
-        }
+    //     if (!newPassword || !confirmPassword) {
+    //         warnToast("Fields can't be empty. Please check and try again")
+    //         return
+    //     }
 
-        if (newPassword !== confirmPassword) {
-            warnToast("Passwords don't match. Please check and try again")
-            return
-        }
+    //     if (newPassword !== confirmPassword) {
+    //         warnToast("Passwords don't match. Please check and try again")
+    //         return
+    //     }
 
-        setIsLoading(true)
-        setIsDisabled(true)
+    //     setIsLoading(true)
+    //     setIsDisabled(true)
 
-        try {
-            const sendCode = await fetch(`${api}/resetPassword`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: newPassword,
-                })
-            })
+    //     try {
+    //         const sendCode = await fetch(`${api}/resetPassword`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 email: email,
+    //                 password: newPassword,
+    //             })
+    //         })
 
-            const res = await sendCode.json()
-            const response = res.message
+    //         const res = await sendCode.json()
+    //         const response = res.message
 
-            if (response === 'error executing query') {
-                setIsLoading(false)
-                setIsDisabled(false)
-                errorToast("Can't reach servers. Please try again later")
-                return
-            }
+    //         if (response === 'error executing query') {
+    //             setIsLoading(false)
+    //             setIsDisabled(false)
+    //             errorToast("Can't reach servers. Please try again later")
+    //             return
+    //         }
 
-            if (response === "failed") {
-                setIsLoading(false)
-                setIsDisabled(false)
-                errorToast("Incorrect Code. Please check and try again.")
-                return
-            }
+    //         if (response === "failed") {
+    //             setIsLoading(false)
+    //             setIsDisabled(false)
+    //             errorToast("Incorrect Code. Please check and try again.")
+    //             return
+    //         }
 
-            setIsLoading(false)
-            setIsDisabled(false)
-            successToast("Password reset successfully")
-            setTimeout(() => navigate('/login'), 3000)
-            return
-        }
-        catch (error) {
-            setIsLoading(false)
-            setIsDisabled(false)
-            console.log('error resetting password', error)
-            errorToast('An error occured. Please try again later.')
-            return
-        }
-    }
+    //         setIsLoading(false)
+    //         setIsDisabled(false)
+    //         successToast("Password reset successfully")
+    //         setTimeout(() => navigate('/login'), 3000)
+    //         return
+    //     }
+    //     catch (error) {
+    //         setIsLoading(false)
+    //         setIsDisabled(false)
+    //         console.log('error resetting password', error)
+    //         errorToast('An error occured. Please try again later.')
+    //         return
+    //     }
+    // }
 
     return (
         <main className='signin-container'>

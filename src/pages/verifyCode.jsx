@@ -10,7 +10,7 @@ import { LoadingBtnComponent } from '../components/loading'
 // utils
 import { color } from '../utils/color'
 import Toast, { errorToast, warnToast } from '../components/toastComponent'
-import { api } from '../utils/api'
+// import { api } from '../utils/api'
 
 export default function VerifyCode() {
 
@@ -65,49 +65,49 @@ export default function VerifyCode() {
         setEmail(getEmail)
     }, [])
 
-    const verifyCode = async () => {
+    // const verifyCode = async () => {
 
-        if (!code) {
-            warnToast("Enter your email")
-            return
-        }
+    //     if (!code) {
+    //         warnToast("Enter your email")
+    //         return
+    //     }
 
-        setIsLoading(true)
-        setIsDisabled(true)
+    //     setIsLoading(true)
+    //     setIsDisabled(true)
 
-        try {
-            const sendCode = await fetch(`${api}/verifyCode/${email}/${code}`)
+    //     try {
+    //         const sendCode = await fetch(`${api}/verifyCode/${email}/${code}`)
 
-            const res = await sendCode.json()
-            const response = res.message
+    //         const res = await sendCode.json()
+    //         const response = res.message
 
-            if (response === 'error executing query') {
-                setIsLoading(false)
-                setIsDisabled(false)
-                errorToast("Can't reach servers. Please try again later")
-                return
-            }
+    //         if (response === 'error executing query') {
+    //             setIsLoading(false)
+    //             setIsDisabled(false)
+    //             errorToast("Can't reach servers. Please try again later")
+    //             return
+    //         }
 
-            if (response === "incorrect code") {
-                setIsLoading(false)
-                setIsDisabled(false)
-                errorToast("Incorrect Code. Please check and try again.")
-                return
-            }
+    //         if (response === "incorrect code") {
+    //             setIsLoading(false)
+    //             setIsDisabled(false)
+    //             errorToast("Incorrect Code. Please check and try again.")
+    //             return
+    //         }
 
-            setIsLoading(false)
-            setIsDisabled(false)
-            navigate('/resetPassword')
-            return
-        }
-        catch (error) {
-            setIsLoading(false)
-            setIsDisabled(false)
-            console.log('error verifying code', error)
-            errorToast('An error occured. Please try again later.')
-            return
-        }
-    }
+    //         setIsLoading(false)
+    //         setIsDisabled(false)
+    //         navigate('/resetPassword')
+    //         return
+    //     }
+    //     catch (error) {
+    //         setIsLoading(false)
+    //         setIsDisabled(false)
+    //         console.log('error verifying code', error)
+    //         errorToast('An error occured. Please try again later.')
+    //         return
+    //     }
+    // }
 
     return (
         <main className='signin-container'>
