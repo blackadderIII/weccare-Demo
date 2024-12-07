@@ -141,11 +141,12 @@ export default function Dashboard() {
   // get designation info
   useEffect(() => {
     setIsDesignationsLoading(true);
-        // Replace this with your local dataset
-        const designationData = { numbers: [2, 16, 1, 28, 17, 13, 1, 51] };
-
-        setDesignationData(designationData.numbers);
-        setIsDesignationsLoading(false);
+    // Replace this with your local dataset
+    const designationData = { numbers: [2, 16, 1, 28, 17, 13, 1, 51] };
+    setDesignationData(designationData.numbers);
+    setTimeout(() => {
+      setIsDesignationsLoading(false);
+    }, 1500);
   }, []); // Empty dependency array ensures it runs once on mount
 
   const designations = [
@@ -199,38 +200,38 @@ export default function Dashboard() {
   // getDepartments
   useEffect(() => {
     setIsDepartmentLoading(true);
-        const response = {
-          departments: [
-            "Business Development",
-            "Client Rep",
-            "Commercial & Contracts",
-            "Design and Engineering",
-            "Finance & Accounts",
-            "HR & Admin",
-            "HSE",
-            "HSSEQ",
-            "IT",
-            "Logistics and Stores",
-            "Maintenance",
-            "Operations",
-            "Planning",
-            "Procurement",
-            "Projects",
-            "QAQC",
-            "Security",
-            "Visitors",
-            "Workshop",
-          ],
-          numbers: [
-            0, 0, 4, 10, 3, 7, 30, 7, 15, 4, 3, 6, 10, 1, 3, 13, 1, 0, 26,
-          ],
-        };
-        const result = response.departments;
-        result.sort((a, b) => a.localeCompare(b));
-        setDepartments(result);
-        setCardByDepartment(response.numbers);
-        setIsDepartmentLoading(false);
-        return;
+    const response = {
+      departments: [
+        "Business Development",
+        "Client Rep",
+        "Commercial & Contracts",
+        "Design and Engineering",
+        "Finance & Accounts",
+        "HR & Admin",
+        "HSE",
+        "HSSEQ",
+        "IT",
+        "Logistics and Stores",
+        "Maintenance",
+        "Operations",
+        "Planning",
+        "Procurement",
+        "Projects",
+        "QAQC",
+        "Security",
+        "Visitors",
+        "Workshop",
+      ],
+      numbers: [0, 0, 4, 10, 3, 7, 30, 7, 15, 4, 3, 6, 10, 1, 3, 13, 1, 0, 26],
+    };
+    const result = response.departments;
+    result.sort((a, b) => a.localeCompare(b));
+    setDepartments(result);
+    setCardByDepartment(response.numbers);
+    setTimeout(() => {
+      setIsDepartmentLoading(false);
+    }, 1500);
+    return;
   }, []);
 
   const departmentData = {
@@ -268,7 +269,9 @@ export default function Dashboard() {
       response.positiveCount,
       response.substandardCount,
     ]);
-    setIsObservationTypeEmpty(false);
+    setTimeout(() => {
+      setIsObservationTypeEmpty(false);
+    }, 1500);
   }, []);
 
   const observationType = {
@@ -300,7 +303,9 @@ export default function Dashboard() {
     };
 
     setIOGPImpactData(response.numbers);
-    setIsIOGPLoading(false);
+    setTimeout(() => {
+      setIsIOGPLoading(false);
+    }, 1500);
   }, []);
 
   const iogpRules = [
@@ -363,7 +368,9 @@ export default function Dashboard() {
 
     // Set the observation data and then update the loading state
     setObservationData(response.numbers);
-    setIsObservationLoading(false);
+    setTimeout(() => {
+      setIsObservationLoading(false);
+    }, 1500);
   }, []);
 
   const Labelobservations = [
@@ -402,7 +409,9 @@ export default function Dashboard() {
       numbers: [9, 10, 5],
     };
     setRiskAssessmentData(response.numbers);
-    setIsObservationLoading(false);
+    setTimeout(() => {
+      setIsObservationLoading(false);
+    }, 1500);
   }, []);
 
   const riskAssessments = ["High", "Medium", "Low"];
@@ -432,7 +441,9 @@ export default function Dashboard() {
     const response = recentcards;
     setProfilePictures(response.profilePictures);
     setRecentCardsData(response.cards);
-    setIsRecentCardsLoading(false);
+    setTimeout(() => {
+      setIsRecentCardsLoading(false);
+    }, 1500);
   }, []);
 
   // --------------------------------------------------------------------------------------------------------------
