@@ -14,7 +14,7 @@ import { TitleComponentH1 } from "../components/titleComponent";
 
 // utils
 import Empty, { ErrorIcon, NotFoundIcon } from "../components/empty";
-import LoadingComponent from "../components/loading";
+import LoadingComponent, { Loading } from "../components/loading";
 import {
   errorToast,
   successToast
@@ -297,7 +297,7 @@ export default function CardsPending() {
           <TitleComponentH1 title={"Pending Care Cards"} />
           <button onClick={() => exportCards()} className="export-btn">
             {isExporting ? (
-              <LoadingComponent />
+              <Loading />
             ) : (
               <>
                 Export<i className="fal fa-file-export"></i>
