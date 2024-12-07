@@ -1,0 +1,232 @@
+.card-detail {
+  width: 450px;
+  height: calc(100vh - 60px);
+  background: #ffffff;
+  padding: 20px;
+  position: absolute;
+  top: 30px;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+  z-index: 1000;
+}
+
+.card-detail.active {
+  right: 30px;
+}
+
+.card-detail .top {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card-detail .top i {
+  width: 45px;
+  height: 45px;
+  background: var(--mainhover);
+  font-size: 18px;
+  color: var(--main);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card-detail .top i:hover {
+  border: 1px solid var(--main);
+}
+
+.card-detail .top button {
+  width: 100px;
+  padding: 10px 25px;
+  border-radius: 7px;
+  background: var(--mainhover);
+  border: none;
+  color: var(--main);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.card-detail .top button:hover {
+  border: 1px solid var(--main);
+  padding: 9px 24px;
+}
+
+.card-detail span.card-number {
+  width: 100%;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.card-detail .card-detail-render {
+  width: 100%;
+  height: calc(100% - 80px - 50px - 80px);
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-detail .card-detail-render .user-info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-detail .card-detail-render .user-info img {
+  width: 100px;
+  height: 100px;
+  /* background: pink; */
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.card-detail .card-detail-render .user-info div {
+  width: calc(100% - 120px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background: powderblue; */
+}
+
+.card-detail .card-detail-render .user-info h3 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.card-detail .card-detail-render .user-info a {
+  font-size: 14px;
+  color: var(--main);
+}
+
+.card-detail .card-detail-render .user-info span {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-detail .card-detail-render hr {
+  width: 80%;
+  opacity: 0.5;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.card-detail .card-detail-render .field {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.card-detail .card-detail-render .field label.title {
+  font-size: 13px;
+  color: var(--main);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.card-detail .card-detail-render .field input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 7px;
+  background: #00000020;
+  border: none;
+}
+
+.card-detail .card-detail-render .field select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 7px;
+  border: none;
+  background: #00000020;
+}
+
+.card-detail .card-detail-render .field option {
+  background: #fff;
+}
+
+.card-detail .card-detail-render .field textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 7px;
+  background: #00000020;
+  border: none;
+  resize: none;
+}
+
+.card-detail .card-detail-render .field input:focus,
+.card-detail .card-detail-render .field textarea:focus,
+.card-detail .card-detail-render .field select:focus {
+  outline: 2px solid var(--main);
+}
+
+.card-detail .card-detail-render .field label.check-box {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.card-detail .card-detail-render .field label.check-box input {
+  width: auto;
+  margin-right: 10px;
+}
+
+.card-detail .card-detail-render span.date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.card-detail .cta {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+/* dark mode */
+
+body.dark .card-detail {
+  box-shadow: var(--shadowDark);
+}
+
+body.dark .card-detail span,
+body.dark .card-detail .card-detail-render h3,
+body.dark .card-detail .card-detail-render .field input,
+body.dark .card-detail .card-detail-render .field p,
+body.dark .card-detail .card-detail-render .field select,
+body.dark .card-detail .card-detail-render .field option,
+body.dark .card-detail .card-detail-render label,
+body.dark .card-detail .card-detail-render .field textarea {
+  color: #fff;
+}
+
+body.dark .card-detail .card-detail-render .field option {
+  background: var(--backgrounddark);
+}

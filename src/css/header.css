@@ -1,0 +1,66 @@
+header {
+  width: fit-content;
+  height: 4.5em;
+  border-radius: 20px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  transition: 0.15s;
+  box-shadow: var(--shadow);
+  z-index: 999;
+}
+
+header .header-buttons {
+  /* width: 105px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 25px;
+  margin-right: 25px;
+  border-right: 1px solid #0003;
+}
+
+header .header-buttons i {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+header h4 {
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  user-select: none;
+  object-fit: cover;
+  border: 2px solid var(--main);
+}
+
+/* dark mode */
+
+body.dark header {
+  box-shadow: var(--shadowDark);
+}
+
+body.dark header .header-buttons i.fa-sun {
+  color: var(--pending);
+}
+
+body.dark header .header-buttons {
+  border-right: 1px solid #fff3;
+}

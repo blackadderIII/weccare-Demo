@@ -1,0 +1,112 @@
+:root {
+  --main: #39b54a;
+  --mainhover: #39b54a2c;
+  --mainhover2: #2d923a;
+  --maindark: #006837;
+  --mainlight: #74ff86;
+  --inputBG: #efefef;
+  --backgrounddark: #21252b;
+  --backgroundlight: #efefef;
+  --darkComponent: #282c34;
+  --inactive: #0007;
+  --inactiveDark: #fff9;
+  --error: #960131;
+  --warn: #fe9100;
+  --black: #222;
+  --pending: #ff841f;
+  --pendingBG: #ffb981;
+  --completed: #00c993;
+  --completedBG: #51e3bc;
+  --uncompleted: #004ddb;
+  --uncompletedBG: #5893ff;
+  --shadow: 0 10px 30px -15px #3337;
+  --shadow2: 0 10px 30px -15px #3335;
+  --shadowDark: 0 10px 35px -17px #101010;
+  --shadowDark2: 0 0px 35px -17px #101010;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #333333;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--main) #fff1;
+  scrollbar-width: thin;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  transition: 0.2s;
+}
+
+body.dark * {
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.render-space {
+  width: calc(100% - 15vw);
+  height: 100vh;
+  padding-top: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
+  overflow-y: auto;
+}
+
+.toast-space {
+  width: 400px;
+  height: auto;
+  position: fixed;
+  padding-top: 20px;
+  top: 0;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+
+@media (max-width: 1366px) {
+  body {
+    font-size: 14px; /* Reduce the base font size for smaller screens */
+  }
+
+  section.render-space {
+    width: calc(100% - 10vw); /* Reduce the width of the main section */
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    overflow-x: hidden;
+  }
+
+  .toast-space {
+    width: 300px; /* Reduce the width of the toast notifications */
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 12px; /* Further reduce the font size for even smaller resolutions */
+  }
+
+  section.render-space {
+    width: 100%; /* Use the full width of the screen */
+    padding: 20px;
+  }
+
+  .toast-space {
+    width: 250px; /* Further reduce toast width */
+  }
+}

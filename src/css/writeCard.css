@@ -1,0 +1,133 @@
+.write .row-02 {
+  width: 50%;
+  height: auto;
+}
+
+.write .section {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.write .section .subtitle {
+  color: var(--main);
+  margin-bottom: 10px;
+}
+
+.write .section .multi-field {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+}
+
+.write .section .field {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.write .section .field:last-child {
+  margin-bottom: 0px;
+}
+
+.write .section .field span {
+  margin-bottom: 10px;
+}
+
+.write .section .field label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.write .section .field input,
+.write .section .field select {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 7px;
+  border: none;
+  background: #0001;
+}
+
+.write .section .field input:focus,
+.write .section .field select:focus {
+  outline: 1px solid var(--main);
+}
+
+body.dark .write .section .field input,
+body.dark .write .section .field select {
+  background-color: #0002;
+}
+
+body.dark .write .section .field option {
+  background: var(--darkComponent);
+}
+
+.write .section .check-box-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.write .section .check-box-container .check-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.write .section .check-box-container .check-box:last-child {
+  margin-bottom: 0px;
+}
+
+.write .section .check-box-container .check-box i {
+  margin-right: 15px;
+  color: var(--main);
+}
+
+body.dark .write .section .text-areas .CodeMirror {
+  background: #0002;
+  border: none;
+}
+
+body.dark .write .section .text-areas .CodeMirror:focus {
+  outline: 1px solid var(--main);
+}
+
+body.dark .write .section .text-areas .editor-toolbar {
+  border: 1px solid #fff3;
+}
+
+body.dark .write .section .text-areas .editor-toolbar button i {
+  color: #fff;
+}
+
+body.dark .write .section .text-areas .editor-toolbar button:hover i {
+  color: #333;
+}
+
+body.dark .write .section .text-areas .CodeMirror-cursor {
+  border-left: 1px solid #fff; /* Change this to your desired color */
+}
+
+.write .row-02 button.submit {
+  width: 150px;
+  padding: 10px;
+  margin-bottom: 30px;
+  background: var(--main);
+  border: none;
+  border-radius: 7px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.write .row-02 button.submit:focus {
+  outline: none;
+}

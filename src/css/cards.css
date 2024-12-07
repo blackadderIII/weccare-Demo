@@ -1,0 +1,137 @@
+.care-cards .row-01 {
+  width: auto;
+  margin-bottom: 30px;
+}
+
+.care-cards .row-02 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.care-cards .row-02 .export-btn {
+  width: 120px;
+  height: 40px;
+  border: 1px solid var(--main);
+  border-radius: 7px;
+  color: var(--main);
+  background-color: var(--mainhover);
+  cursor: pointer;
+}
+
+.care-cards .row-02 .export-btn i {
+  color: var(--main);
+  margin-left: 7px;
+}
+
+.care-cards .row-03 {
+  width: 100%;
+  height: calc(100vh - 4.5em - 130px - 48px);
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.care-cards .row-03 table {
+  width: 100%;
+  height: auto;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  align-self: flex-start;
+  margin-bottom: 30px;
+}
+
+.care-cards .row-03 table thead {
+  height: 70px;
+  background: var(--backgroundlight);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: 0.2s;
+}
+
+.care-cards .row-03 table thead th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--inactive);
+}
+
+.care-cards .row-03 table tbody tr {
+  z-index: 90;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fff;
+}
+
+.care-cards .row-03 table tbody tr:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow2);
+}
+
+.care-cards .row-03 table tbody td {
+  height: 90px;
+  font-size: 14px;
+}
+
+.care-cards .row-03 table tbody td:nth-child(1) {
+  padding-left: 20px;
+  font-weight: 600;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.care-cards .row-03 table tbody td:last-child {
+  padding-right: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.care-cards .row-03 table tbody td .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.care-cards .row-03 table tbody td .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.care-cards .row-03 table tbody td .user-info h4 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.care-cards .row-03 table tbody td .user-info a {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 500;
+  color: var(--main);
+}
+
+/* darkmode */
+
+body.dark .care-cards .row-03 table thead {
+  background-color: var(--backgrounddark);
+}
+
+body.dark .care-cards .row-03 table thead th {
+  color: var(--inactiveDark);
+}
+
+body.dark .care-cards .row-03 table tbody tr {
+  background: var(--darkComponent);
+}
+
+body.dark .care-cards .row-03 table tbody tr:hover {
+  box-shadow: var(--shadowDark2);
+}
+
+body.dark .care-cards .row-03 table tbody tr td,
+body.dark .care-cards .row-03 table tbody tr td h4 {
+  color: #fff;
+}

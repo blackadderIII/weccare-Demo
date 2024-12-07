@@ -1,0 +1,452 @@
+.dashboard .today {
+  width: fit-content;
+  height: 4.5em;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard .today h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dashboard .greeting {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.dashboard .row-00 {
+  width: 100%;
+  height: auto;
+}
+
+.dashboard .row-00 .overview-tabs {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.dashboard .row-00 .overview-tabs .totalCards {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 12px double var(--main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  position: relative;
+}
+
+.dashboard .row-00 .overview-tabs .totalCards .info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-00 .overview-tabs .totalCards .info h2 {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.dashboard .row-00 .overview-tabs .totalCards .info span {
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  user-select: none;
+  letter-spacing: 1px;
+}
+
+.dashboard .row-01 {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: calc(75% - 15px) calc(25% - 15px);
+  justify-content: space-between;
+}
+
+.dashboard .row-01 .left-col {
+  width: 100%;
+  height: auto;
+  transition: 0.15s;
+}
+
+.dashboard .row-01 .left-col .multi-charts {
+  max-width: 100%;
+  height: 500px;
+  display: grid;
+  grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.dashboard .row-01 .left-col .multi-charts .iogp-overview {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  transition: width height 0.2s;
+}
+
+.dashboard .row-01 .left-col .multi-charts .observation-overview {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  transition: width height 0.2s;
+}
+
+.dashboard .row-01 .multi-charts .observation-overview .line-chart-container {
+  width: 100%;
+  height: calc(100% - 20px - 20px);
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-01 .left-col .department-overview .area-chart-container {
+  width: 100%;
+  height: calc(100% - 20px - 20px);
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-01 .left-col .iogp-overview .h-chart-container {
+  width: 100%;
+  height: calc(100% - 20px - 20px);
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-01 .left-col .department-overview .area-chart {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.dashboard .row-01 .right-col {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.dashboard .row-01 .right-col .card-chart-overview {
+  width: 100%;
+  height: 500px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.dashboard .row-01 .right-col .doughnut-chart-container {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.dashboard .row-01 .right-col .doughnut-chart-container .info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-01 .right-col .doughnut-chart-container .info h2 {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.dashboard .row-01 .doughnut-chart-container .info span {
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 14px;
+  font-weight: 500;
+  opacity: 0.7;
+  user-select: none;
+  letter-spacing: 1px;
+}
+
+.dashboard .row-01 .right-col .legend-container {
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+}
+
+.dashboard .row-01 .right-col .risk-assessment-chart-overview {
+  width: 100%;
+  height: calc(75px * 7.5);
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  transition: height width 0.3s;
+}
+
+.dashboard .row-01 .right-col .vertical-bar-chart-container {
+  width: 100%;
+  height: calc(100% - 20px - 18px);
+}
+
+.dashboard .recent-table {
+  width: 100%;
+  height: calc(75px * 7.5);
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.dashboard .recent-table .recent-table-container {
+  width: 100%;
+  height: calc(100% - 45px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dashboard .recent-table table {
+  width: 100%;
+  height: auto;
+  align-self: flex-start;
+  border-collapse: collapse;
+}
+
+.dashboard .recent-table table thead {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #0001;
+}
+
+.dashboard .recent-table table thead tr {
+  height: 75px;
+  text-align: left;
+}
+
+.dashboard .recent-table table thead tr th {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dashboard .recent-table table thead tr th :nth-child(1) {
+  padding-left: 20px;
+}
+
+.dashboard .recent-table table thead tr th :last-childs {
+  padding-right: 20px;
+}
+
+.dashboard .recent-table table tbody tr:nth-child(even) {
+  background: #0001;
+}
+
+.dashboard .recent-table table tbody tr:hover {
+  background: #0002;
+}
+
+.dashboard .recent-table table tbody tr td:nth-child(1) {
+  padding-left: 20px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  font-weight: 600;
+}
+
+.dashboard .recent-table table tbody tr td:last-child {
+  padding-right: 20px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.dashboard .recent-table table tbody tr td {
+  height: 75px;
+  font-size: 14px;
+}
+
+.dashboard .recent-table table tbody tr td .user-info {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dashboard .recent-table table tbody tr td .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dashboard .recent-table table tbody tr td .user-info .user-info-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dashboard .recent-table table tbody tr td .user-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.dashboard .recent-table table tbody tr td .user-info a {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  color: var(--main);
+}
+
+.dashboard .recent-table table tbody tr .status {
+  width: 100px;
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 7px;
+}
+
+.dashboard .recent-table table tbody tr .status.Pending {
+  background: var(--pendingBG);
+  color: #0007;
+}
+
+.dashboard .recent-table table tbody tr .status.Completed {
+  background: var(--completedBG);
+  color: #0007;
+}
+
+.dashboard .recent-table table tbody tr .status.Uncompleted {
+  background: var(--uncompletedBG);
+  color: #0007;
+}
+
+/* dark mode */
+
+body.dark .dashboard .recent-table table tbody tr td,
+body.dark .dashboard .recent-table table thead th,
+body.dark .dashboard .recent-table table tbody tr td h4 {
+  color: #fff;
+}
+
+.dashboard .row-02 {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: calc(35% - 15px) calc(65% - 15px);
+  justify-content: space-between;
+}
+
+.dashboard .row-02 .left-col,
+.dashboard .row-02 .right-col {
+  width: 100%;
+  height: auto;
+  transition: 0.15s;
+}
+
+.dashboard .row-02 .left-col .iogp-overview {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  transition: width height 0.2s;
+}
+
+.dashboard .row-02 .left-col .iogp-overview .h-chart-container {
+  width: 100%;
+  height: calc(100% - 20px - 20px);
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-02 .right-col .department-overview {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  transition: width height 0.2s;
+}
+
+.dashboard .row-02 .right-col .department-overview .area-chart-container {
+  width: 100%;
+  height: calc(100% - 20px - 20px);
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .row-02 .right-col .department-overview .area-chart {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+@media (max-width: 1366px) {
+  
+  .dashboard .row-00 .overview-tabs .totalCards {
+    width: 160px;
+    height: 160px;
+  }
+
+  .dashboard .row-01 {
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: calc(75% - 10px) calc(25% - 10px);
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard .row-00 .overview-tabs .totalCards {
+    width: 140px;
+    height: 140px;
+  }
+
+  .dashboard .row-01 {
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: calc(75% - 10px) calc(25% - 10px);
+    justify-content: space-between;
+  }
+
+  .dashboard .recent-table .recent-table-container {
+    width: 80%;
+    height: calc(100% - 45px);
+  }
+}

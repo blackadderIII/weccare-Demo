@@ -1,0 +1,75 @@
+.toast {
+  width: 350px;
+  height: auto;
+  padding: 10px;
+  border-radius: 7px;
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  animation: appear 0.3s ease;
+  transition: all 0.3s;
+}
+
+.toast:last-child {
+  margin-bottom: 0;
+}
+
+.toast i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.toast i.success {
+  color: var(--main);
+}
+
+.toast i.error {
+  color: var(--error);
+}
+
+.toast i.warn {
+  color: var(--warn);
+}
+
+.toast span {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.toast span h4 {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 15px;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.toast span p {
+  font-size: 14px;
+  color: #222;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* dark mode */
+body.dark .toast {
+  background: var(--darkComponent);
+  box-shadow: var(--shadowDark);
+}
+
+body.dark .toast span h4,
+body.dark .toast span p {
+  color: #fff;
+}

@@ -1,0 +1,36 @@
+.input-component {
+  width: 100%;
+  height: auto;
+  background: #0001;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.input-component i {
+  position: absolute;
+  left: 20px;
+}
+
+.input-component input,
+.input-component select {
+  width: 100%;
+  padding: 12px 20px 12px 50px;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.input-component input:focus,
+.input-component select:focus {
+  outline: 2px solid var(--main);
+}
+
+body.dark .input-component select option {
+  background: var(--darkComponent);
+  color: #fff;
+}

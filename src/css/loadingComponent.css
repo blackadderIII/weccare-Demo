@@ -1,0 +1,147 @@
+.loading-container {
+  width: 75px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.loading-container .ball-01 {
+  width: 20px;
+  height: 20px;
+  background: var(--maindark);
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  transition: all 0.5s;
+  animation: spin-01 2s infinite;
+}
+
+.loading-container .ball-02 {
+  width: 12px;
+  height: 12px;
+  background: var(--main);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+  animation: spin-02 2s infinite;
+}
+
+.loading-container .ball-03 {
+  width: 20px;
+  height: 20px;
+  background: var(--mainlight);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(100% - 20px);
+  transition: all 0.5s;
+  animation: spin-03 2s infinite;
+}
+
+@keyframes spin-01 {
+  0% {
+    left: 0%;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+
+  33.33% {
+    left: calc(100% - 10px);
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+
+  66.66% {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    z-index: 5;
+  }
+}
+
+@keyframes spin-02 {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    z-index: 5;
+  }
+
+  33.33% {
+    left: calc(0% + 10px);
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+
+  66.66% {
+    left: calc(100% - 10px);
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+}
+
+@keyframes spin-03 {
+  0% {
+    left: calc(100% - 20px);
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+
+  33.33% {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    z-index: 5;
+  }
+
+  66.66% {
+    left: 0%;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+}
+
+.loading-spiner-2 {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #0000;
+  border-top: 3px solid var(--main);
+  border-bottom: 3px solid var(--main);
+  border-left: 3px solid var(--main);
+  border-radius: 50%;
+  animation: spiner 0.7s linear infinite;
+  margin: auto;
+}
+
+.loading-spiner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff7;
+  border-top: 3px solid #ffff;
+  border-bottom: 3px solid #ffff;
+  border-radius: 50%;
+  animation: spiner 0.7s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spiner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

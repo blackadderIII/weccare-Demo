@@ -1,0 +1,119 @@
+.overview-tab {
+  width: 330px;
+  height: 190px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.overview-tab:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow);
+}
+
+.overview-tab i.background {
+  position: absolute;
+  font-size: 200px;
+  opacity: 0.1;
+  right: -20%;
+  bottom: -10px;
+  transform: rotate(-30deg);
+  z-index: 0;
+  transition: 0.3s;
+  color: #000000;
+}
+
+.overview-tab:hover i.background {
+  font-size: 220px;
+}
+
+.overview-tab .icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.overview-tab .icon i {
+  font-size: 28px;
+}
+
+.overview-tab .info {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.overview-tab .info .left-col h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.overview-tab .info .left-col span {
+  font-size: 14px;
+  color: #fff;
+}
+
+.overview-tab .info span.percentage {
+  width: fit-content;
+  padding: 5px 25px;
+  border-radius: 30px;
+  background: linear-gradient(to left, #fff1, #fff5);
+  color: #fff;
+  font-weight: 600;
+}
+
+
+@media (max-width: 1366px) {
+  .overview-tab {
+    width: 290px;
+    height: 160px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 1024px) {
+  .overview-tab {
+    width: 200px;
+    height: 150px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+}

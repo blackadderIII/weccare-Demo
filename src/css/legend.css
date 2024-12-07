@@ -1,0 +1,22 @@
+.legend {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  transition: all 0.2s;
+}
+
+.legend .color-tip {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.legend h3 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
