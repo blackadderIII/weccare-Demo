@@ -170,33 +170,6 @@
 }
 
 
-@media (max-width: 1366px) {
- 
-  .settings .row-02 .tab {
-    width: 320px;
-    height: fit-content;
-  }
-}
-
-@media (max-width: 1024px) {
-  .settings .row-02 .tab {
-    width: 230px;
-    height: fit-content;
-  }
-
-  .settings .row-02 .tab .profile-picture {
-    width: 50%;
-  }
-
-  .settings .row-02 .tab .profile-picture-container {
-    width: 80px;
-    height: 80px;
-  }
-  .settings .row-02 .tab .profile-picture-container .loading-container {
-    width: 80px;
-    height: 80px;
-  }
-}
 
 @media (max-width: 1920px) {
   
@@ -218,3 +191,32 @@
     height: 80px;
   }
 }
+
+@media (max-width: 1366px) {
+  .settings .row-02 .tab {
+    width: 320px;
+    height: fit-content;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .settings .row-02 .tab {
+    width: 230px;
+    height: fit-content;
+  }
+
+  .settings .row-02 .tab .profile-picture {
+    width: 50%;
+  }
+
+  .settings .row-02 .tab .profile-picture-container {
+    width: 80px;
+    height: 80px;
+  }
+  .settings .row-02 .tab .profile-picture-container .loading-container {
+    width: 80px;
+    height: 80px;
+  }
+}
+
