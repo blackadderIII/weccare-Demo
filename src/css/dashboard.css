@@ -450,3 +450,20 @@ body.dark .dashboard .recent-table table tbody tr td h4 {
     height: calc(100% - 45px);
   }
 }
+
+
+@media (max-width: 1920px) {
+  
+  .dashboard .row-00 .overview-tabs .totalCards {
+    width: 165px;
+    height: 165px;
+  }
+
+  .dashboard .row-01 {
+    width: 94%;
+    height: auto;
+    display: grid;
+    grid-template-columns: calc(75% - 10px) calc(25% - 10px);
+    justify-content: space-between;
+  }
+}
