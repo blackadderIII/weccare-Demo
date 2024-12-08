@@ -197,3 +197,24 @@
     height: 80px;
   }
 }
+
+@media (max-width: 1920px) {
+  
+  .settings .row-02 .tab {
+    width: 370px;
+    height: fit-content;
+  }
+
+  .settings .row-02 .tab .profile-picture {
+    width: 100%;
+  }
+
+  .settings .row-02 .tab .profile-picture-container {
+    width: 80px;
+    height: 80px;
+  }
+  .settings .row-02 .tab .profile-picture-container .loading-container {
+    width: 80px;
+    height: 80px;
+  }
+}
