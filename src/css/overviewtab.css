@@ -117,3 +117,22 @@
   }
 
 }
+
+
+@media (max-width: 1920px) {
+  .overview-tab {
+    width: 310px;
+    height: 160px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+}
